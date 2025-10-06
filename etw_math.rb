@@ -289,7 +289,7 @@ class EtwMath
   #   EtwMath.size_range_cost(5, 10) # 28,000
   def self.size_range_cost(starting_level, ending_level)
     return false if !input_valid?(starting_level, ending_level)
-    format_number(5 * (0.5 * ending_level ** 4 + ending_level ** 3 + 0.5 * ending_level ** 2) -5 * (0.5 * starting_level ** 4 + starting_level ** 3 + 0.5 * starting_level ** 2))
+    format_number(5 * (0.5 * ending_level ** 4 + ending_level ** 3 + 0.5 * ending_level ** 2) - 5 * (0.5 * starting_level ** 4 + starting_level ** 3 + 0.5 * starting_level ** 2))
   end
 
   # Calculates walk speed cost using a range from a starting level to an ending level
@@ -300,7 +300,7 @@ class EtwMath
   #   EtwMath.walk_range_cost(5, 10) # 378,000
   def self.walk_range_cost(starting_level, ending_level)
     return false if !input_valid?(starting_level, ending_level)
-    format_number(67.5 * (0.5 * ending_level ** 4 + ending_level ** 3 + 0.5 * ending_level ** 2) -67.5 * (0.5 * starting_level ** 4 + starting_level ** 3 + 0.5 * starting_level ** 2))
+    format_number(67.5 * (0.5 * ending_level ** 4 + ending_level ** 3 + 0.5 * ending_level ** 2) - 67.5 * (0.5 * starting_level ** 4 + starting_level ** 3 + 0.5 * starting_level ** 2))
   end
 
   # Calculates multiplier cost using a range from a starting level to an ending level
@@ -311,7 +311,7 @@ class EtwMath
   #   EtwMath.multi_range_cost(5, 10) # 14,000,000
   def self.multi_range_cost(starting_level, ending_level)
     return false if !input_valid?(starting_level, ending_level)
-    format_number(2500 * (0.5 * ending_level ** 4 + ending_level ** 3 + 0.5 * ending_level ** 2) -2500 * (0.5 * starting_level ** 4 + starting_level ** 3 + 0.5 * starting_level ** 2))
+    format_number(2500 * (0.5 * ending_level ** 4 + ending_level ** 3 + 0.5 * ending_level ** 2) - 2500 * (0.5 * starting_level ** 4 + starting_level ** 3 + 0.5 * starting_level ** 2))
   end
 
   # Calculates eat speed cost using a range from a starting level to an ending level
@@ -322,7 +322,7 @@ class EtwMath
   #   EtwMath.eat_range_cost(5, 10) # 28,000,000
   def self.eat_range_cost(starting_level, ending_level)
     return false if !input_valid?(starting_level, ending_level)
-    format_number(5000 * (0.5 * ending_level ** 4 + ending_level ** 3 + 0.5 * ending_level ** 2) -5000 * (0.5 * starting_level ** 4 + starting_level ** 3 + 0.5 * starting_level ** 2))
+    format_number(5000 * (0.5 * ending_level ** 4 + ending_level ** 3 + 0.5 * ending_level ** 2) - 5000 * (0.5 * starting_level ** 4 + starting_level ** 3 + 0.5 * starting_level ** 2))
   end
 
   # Calculates small bite amount
