@@ -30,6 +30,15 @@ class EtwMath
   # EtwMath version
   VERSION = "1.0.0"
 
+  # Number of seconds in 1 day
+  SECONDS_PER_DAY = 86400
+
+  # Number of seconds in 1 hour
+  SECONDS_PER_HOUR = 3600
+
+  # Number of seconds in 1 minute
+  SECONDS_PER_MINUTE = 60
+
   # Makes numbers more readable to humans by adding commas
   # @param number [Numeric] Numerical value
   # @param use_decimal [Boolean] Include decimal portion (excluded by default)
@@ -46,6 +55,23 @@ class EtwMath
       [whole_with_commas, decimal].compact.join(".")
     else
       return whole_with_commas
+    end
+  end
+
+  # Converts seconds to be displayed as hours, minutes, and seconds
+  # @param total_seconds [Numeric] Total number of seconds
+  # @return [String] Human readable time format
+  # @example
+  #   EtwMath.format_time
+  def self.format_time(total_seconds)
+    days = total_seconds / SECONDS_PER_DAY
+    hours = (total_seconds % SECONDS_PER_DAY) / SECONDS_PER_HOUR
+    minutes = (total_seconds % SECONDS_PER_HOUR) / SECONDS_PER_MINUTE
+    seconds = total_seconds % SECONDS_PER_MINUTE
+    if days > 999
+      format("%sd:%02dh:%02dm:%02ds", format_number(days), hours, minutes, seconds)
+    else
+      format("%02dd:%02dh:%02dm:%02ds", days, hours, minutes, seconds)
     end
   end
 
@@ -466,7 +492,7 @@ class EtwMath
   def self.time_to_max(size_level, multi)
     return false if !input_valid?(size_level, multi)
     begin
-      format_number((((size_level.to_f / (multi.to_f * 0.03 * 3) * (141.0 / size_level.to_f)) * 3.3 + (size_level.to_f / (multi.to_f * 0.03 * 3.0) * (1 - 141.0 / size_level.to_f)) * 5.1) / 60).round(2), true)
+      format_time((((size_level.to_f / (multi.to_f * 0.03 * 3) * (141.0 / size_level.to_f)) * 3.3 + (size_level.to_f / (multi.to_f * 0.03 * 3.0) * (1 - 141.0 / size_level.to_f)) * 5.1)).round(2))
     rescue # division by zero
       return false
     end
@@ -481,7 +507,7 @@ class EtwMath
   def self.time_to_max_small(size_level, multi)
     return false if !input_valid?(size_level, multi)
     begin
-      format_number(((size_level.to_f / multi.to_f / (0.03 * 3) * 3.3 * (0.5 + size_level.to_f / (141 * 2))) / 60).round(2), true)
+      format_time(((size_level.to_f / multi.to_f / (0.03 * 3) * 3.3 * (0.5 + size_level.to_f / (141 * 2)))).round(2))
     rescue # division by zero
       return false
     end
