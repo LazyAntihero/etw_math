@@ -62,7 +62,8 @@ class EtwMath
   # @param total_seconds [Numeric] Total number of seconds
   # @return [String] Human readable time format
   # @example
-  #   EtwMath.format_time
+  #   EtwMath.format_time(1234567) # 14d:06h:56m:07s
+  #   EtwMath.format_time(123456789) # 1,428d:21h:33m:09s
   def self.format_time(total_seconds)
     days = total_seconds / SECONDS_PER_DAY
     hours = (total_seconds % SECONDS_PER_DAY) / SECONDS_PER_HOUR
