@@ -6,5 +6,5 @@ Gem::Specification.new do |spec|
   spec.homepage = "https://github.com/LazyAntihero/etw_math"
   spec.description = "Calculate the cost of upgrades, another player's multiplier, and more."
   spec.license = "BSD-2-Clause"
-  spec.files = ["lib/etw_math.rb", "example.rb"]
+  spec.files = ["lib/etw_math.rb", "example.rb", "test.rb"]
 end
