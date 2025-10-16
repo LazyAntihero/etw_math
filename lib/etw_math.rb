@@ -28,7 +28,7 @@
 # This class contains various methods that perform Eat the World calculations
 class EtwMath
   # EtwMath version
-  VERSION = "1.0.0"
+  VERSION = "1.0.1"
 
   # Number of seconds in 1 day
   SECONDS_PER_DAY = 86400

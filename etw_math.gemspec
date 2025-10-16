@@ -1,6 +1,6 @@
 Gem::Specification.new do |spec|
   spec.name = "etw_math"
-  spec.version = "1.0.0"
+  spec.version = "1.0.1"
   spec.authors = ["Lazy Villain"]
   spec.summary = "Various mathematical formulas for Roblox - Eat the World (ETW)"
   spec.homepage = "https://github.com/LazyAntihero/etw_math"
