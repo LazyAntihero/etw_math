@@ -315,7 +315,7 @@ class EtwMath
   # @example
   #   EtwMath.size_range_cost(5, 10) # 28,000
   def self.size_range_cost(starting_level, ending_level)
-    return false if !input_valid?(starting_level, ending_level)
+    return false if !input_valid?(starting_level, ending_level) || starting_level > ending_level
     format_number(5 * (0.5 * ending_level ** 4 + ending_level ** 3 + 0.5 * ending_level ** 2) - 5 * (0.5 * starting_level ** 4 + starting_level ** 3 + 0.5 * starting_level ** 2))
   end
 
@@ -326,7 +326,7 @@ class EtwMath
   # @example
   #   EtwMath.walk_range_cost(5, 10) # 378,000
   def self.walk_range_cost(starting_level, ending_level)
-    return false if !input_valid?(starting_level, ending_level)
+    return false if !input_valid?(starting_level, ending_level) || starting_level > ending_level
     format_number(67.5 * (0.5 * ending_level ** 4 + ending_level ** 3 + 0.5 * ending_level ** 2) - 67.5 * (0.5 * starting_level ** 4 + starting_level ** 3 + 0.5 * starting_level ** 2))
   end
 
@@ -337,7 +337,7 @@ class EtwMath
   # @example
   #   EtwMath.multi_range_cost(5, 10) # 14,000,000
   def self.multi_range_cost(starting_level, ending_level)
-    return false if !input_valid?(starting_level, ending_level)
+    return false if !input_valid?(starting_level, ending_level) || starting_level > ending_level
     format_number(2500 * (0.5 * ending_level ** 4 + ending_level ** 3 + 0.5 * ending_level ** 2) - 2500 * (0.5 * starting_level ** 4 + starting_level ** 3 + 0.5 * starting_level ** 2))
   end
 
@@ -348,7 +348,7 @@ class EtwMath
   # @example
   #   EtwMath.eat_range_cost(5, 10) # 28,000,000
   def self.eat_range_cost(starting_level, ending_level)
-    return false if !input_valid?(starting_level, ending_level)
+    return false if !input_valid?(starting_level, ending_level) || starting_level > ending_level
     format_number(5000 * (0.5 * ending_level ** 4 + ending_level ** 3 + 0.5 * ending_level ** 2) - 5000 * (0.5 * starting_level ** 4 + starting_level ** 3 + 0.5 * starting_level ** 2))
   end
 
@@ -404,7 +404,7 @@ class EtwMath
   # @example
   #   EtwMath.small_bite_delta_multi(9440, 10954) # 53
   def self.small_bite_delta_multi(starting_size, ending_size)
-    return false if !input_valid?(starting_size, ending_size)
+    return false if !input_valid?(starting_size, ending_size) || starting_size > ending_size
     begin
       format_number(((((-50 + Math.sqrt(2500 + 200 * ending_size)) / 100) - ((-50 + Math.sqrt(2500 + 200 * starting_size)) / 100)) / 0.02).round)
     rescue # division by zero
@@ -419,7 +419,7 @@ class EtwMath
   # @example
   #   EtwMath.medium_bite_delta_multi(9440, 10954) # 35
   def self.medium_bite_delta_multi(starting_size, ending_size)
-    return false if !input_valid?(starting_size, ending_size)
+    return false if !input_valid?(starting_size, ending_size) || starting_size > ending_size
     begin
       format_number(((((-50 + Math.sqrt(2500 + 200 * ending_size)) / 100) - ((-50 + Math.sqrt(2500 + 200 * starting_size)) / 100)) / 0.03).round)
     rescue # division by zero
@@ -434,7 +434,7 @@ class EtwMath
   # @example
   #   EtwMath.big_bite_delta_multi(9440, 10954) # 27
   def self.big_bite_delta_multi(starting_size, ending_size)
-    return false if !input_valid?(starting_size, ending_size)
+    return false if !input_valid?(starting_size, ending_size) || starting_size > ending_size
     begin
       format_number(((((-50 + Math.sqrt(2500 + 200 * ending_size)) / 100) - ((-50 + Math.sqrt(2500 + 200 * starting_size)) / 100)) / 0.04).round)
     rescue # division by zero
