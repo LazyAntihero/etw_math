@@ -23,7 +23,7 @@
 # (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
 # SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-require_relative 'etw_math'
+require_relative 'lib/etw_math'
 
 puts "Input tests..."
 puts EtwMath.input_valid?(5)
