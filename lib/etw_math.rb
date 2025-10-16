@@ -489,7 +489,7 @@ class EtwMath
   # @param multi [Integer] Multiplier
   # @return [String, Boolean] String representation of an integer or false if input is invalid or division by zero occurs
   # @example
-  #   EtwMath.time_to_max(565, 101) # 4.82 minutes
+  #   EtwMath.time_to_max(565, 101) # 00d:00h:04m:49s
   def self.time_to_max(size_level, multi)
     return false if !input_valid?(size_level, multi)
     begin
@@ -504,7 +504,7 @@ class EtwMath
   # @param multi [Integer] Multiplier
   # @return [String, Boolean] String representation of an integer or false if input is invalid or division by zero occurs
   # @example
-  #   EtwMath.time_to_max_small(140, 31) # 2.75 minutes
+  #   EtwMath.time_to_max_small(140, 31) # 00d:00h:02m:45s
   def self.time_to_max_small(size_level, multi)
     return false if !input_valid?(size_level, multi)
     begin
